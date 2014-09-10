@@ -1,0 +1,26 @@
+#{extends 'main.html' /}
+#{set title:'List' /}
+
+<table class="table table-hover">
+    <caption><h4>Contact List</h4></caption>
+	<thead>
+		<tr>
+			<th>Names</th>
+			<th>Phone Number</th>
+			<th>Email</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+	    #{list contacts, as:'contact'}
+	    <tr class="success" contactId="${contact.id}" draggable="true">
+   			<td id="name-${contact.id}">${contact.name}</td>
+   			<td id="phoneNumber-${contact.id}">${contact.phoneNumber}</td>
+   			<td id="email-${contact.id}">${contact.email}</td>
+                        <td><a href="@{form(contact.id)}" class="btn btn-warning">Edit</a></td>
+                        <td><a href="@{delete(contact.id)}" class="btn btn-danger" onclick='return confirm("Are you sure you want to delete?")'>Delete</a></td>
+   		</tr>
+	    #{/list}
+	</tbody>
+</table>

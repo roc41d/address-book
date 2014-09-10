@@ -1,0 +1,29 @@
+#{extends 'main.html' /}
+#{set title:'Form' /}
+
+#{form @save(contact)}
+    
+    <p class="field">
+        <label for="name">Names:</label>
+        <input type="text" id="name" name="contact.name" value="${contact?.name}">
+        <span class="error">${errors.forKey('contact.name')}</span>
+    </p>
+
+    <p class="field">
+        <label for="birthdate">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="contact.phoneNumber" value="${contact?.phoneNumber}">
+        <span class="error">${errors.forKey('contact.phoneNumber')}</span>
+    </p>
+
+    <p class="field">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="contact.email" value="${contact?.email}">
+        <span class="error">${errors.forKey('contact.email')}</span>
+    </p>
+
+    <p>
+        <a href="@{list()}" class="btn btn-info">Cancel</a>
+        <input type="submit" value="Save Contact" class="btn btn-success">
+    </p>
+
+#{/form}

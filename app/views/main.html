@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="${_response_encoding}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/image.jpg'}">
+        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{get 'moreScripts' /}
+    </head>
+    <body>
+        <div align="center">
+            <h3>Awesome Address Book</h3>
+            <a href="@{Application.index()}" title='Home' class="btn btn-info" >Home</a>
+            <a href="@{Application.form()}" title='Add Contact' class="btn btn-info" >Add Contact</a>
+            <a href="@{Application.list()}" title='View Contacts' class="btn btn-info" >View Contacts</a>
+            <hr>
+            
+            <section>
+                #{doLayout /}
+            </section>
+            
+            <footer>Created by Rocardho | <a href="http://www.playframework.org/">Powered by Play Framework</a></footer>
+        </div>
+    </body>
+</html>
